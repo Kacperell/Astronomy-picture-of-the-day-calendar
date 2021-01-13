@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Astronomy Photo Of the Day based birthday calendar">
+  <title>Birthday calendar</title>
+</head>
+
+<body>
+  <div class="container">
+    <form class="form">
+      <h2 class="form-title">Add person</h2>
+      <div class="form__element">
+        <label for='form-name'>
+          Name
+        </label>
+        <input id='form-name' type="text" maxlength="40" required>
+      </div>
+      <div class="form__element">
+        <label for='birtday-date'>
+          Birth date
+        </label>
+        <input date-format="yyyy-mm-dd" id='birtday-date' type="date" required>    
+      </div>
+      <div class="form__element">
+        <label for='form-email'>
+          Email
+        </label>
+        <input id='form-email' type="email" maxlength="40"  required>
+      </div>
+      <div class="form__element">
+        <label for='form-phone'>
+          Phone
+        </label>
+        <input placeholder="9 numbers" id='form-phone' type="tel" pattern="[0-9]{9}" required>
+      </div>
+      <button class="form-button" type="submit">
+        Add
+      </button>
+    </form>
+    <div id="calendar" class="calendar">
+      <div class="calendar__month">
+        <button class="calendar__month__arrow calendar__month__arrow--prev">
+          <img src="./images/arrow_left.svg" alt="Arrow" srcset="">
+        </button>
+        <div class="calendar__month__current">
+          <h2 class="calendar__month__current--month"></h2>
+          <p class="calendar__month__current--year"></p>
+        </div>
+        <button class="calendar__month__arrow calendar__month__arrow--next">
+          <img src="./images/arrow_right.svg" alt="Arrow" srcset="">
+        </button>
+      </div>
+      <div class="calendar__weekdays">
+        <div>Mon</div>
+        <div>Tue</div>
+        <div>Wed</div>
+        <div>Thu</div>
+        <div>Fri</div>
+        <div>Sat</div>
+        <div>Sun</div>
+      </div>
+
+      <div class="calendar__days"></div>
+
+    </div>
+    <ul class="list">   
+    </ul>
+  </div>
+  <div class="modal">  
+    <div class="modal__content">
+      <button class="modal__content__btn--close">     
+        <img src="./images/close.svg" alt="Close button" srcset="">
+      </button>
+      <div class="modal__content__birthday"> 
+      </div>
+    </div>
+  </div>
+
+
+  <script src="../index.js"></script>
+
+</body>
+
+</html>

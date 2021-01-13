@@ -1,0 +1,312 @@
+.modal {
+  background: rgba(0, 0, 0, 0.6);
+  visibility: hidden;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  will-change: opacity;
+  transition: all 0.4s ease;
+}
+.modal .modal__content {
+  background-color: #FFFEFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: column;
+  width: 800px;
+  max-width: 100%;
+  padding: 20px;
+  padding-top: 0;
+  border-radius: 3px;
+  min-height: 50vh;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+.modal .modal__content .modal__content__btn--close {
+  padding: 10px;
+  background: 0;
+  padding: 10px;
+  border: 0;
+  cursor: pointer;
+}
+.modal .modal__content .modal__content__btn--close img {
+  width: 25px;
+}
+.modal .modal__content .modal__content__birthday {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.modal .modal__content .modal__content__birthday img {
+  max-width: 70%;
+  margin: auto;
+}
+.modal .modal__content .modal__content__birthday span {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #202124;
+}
+.modal .modal__content .modal__content__birthday span,
+.modal .modal__content .modal__content__birthday p {
+  margin: 10px;
+}
+
+.modal.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+ul.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+ul.list li {
+  display: flex;
+  padding: 5px;
+  border-bottom: 1px solid grey;
+}
+ul.list li:last-child {
+  border-bottom: 0;
+}
+ul.list li .list__astronomy-info {
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+ul.list li .list__astronomy-info span {
+  margin-top: 5px;
+}
+ul.list li .list__person-info {
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+ul.list li .list__person-info span {
+  padding: 5px 0 5px 0;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+ul.list li img {
+  object-fit: cover;
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+}
+@media only screen and (max-width: 780px) {
+  ul.list li img {
+    width: 70px;
+    height: 50px;
+  }
+}
+ul.list li .list__buttons {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+ul.list li .list__buttons button {
+  margin: auto;
+  margin-top: 5px;
+  max-width: 90%;
+  padding: 5px;
+  background: 0;
+  border: 0;
+  border: 1px solid #202124;
+  cursor: pointer;
+  border-radius: 2px;
+  background-color: #202124;
+  color: white;
+  width: 70px;
+}
+ul.list li .list__buttons button:focus, ul.list li .list__buttons button:hover {
+  transition: all 0.2s;
+  background-color: white;
+  color: #202124;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+::selection {
+  background: #202124;
+  color: white;
+}
+
+.container {
+  width: 1100px;
+  max-width: 98%;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+input[type=date]::-webkit-inner-spin-button,
+input[type=date]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form .form-title {
+  color: #202124;
+}
+.form .form__element {
+  display: flex;
+  flex-direction: column;
+  width: 590px;
+  max-width: 100%;
+  margin-bottom: 10px;
+}
+.form .form__element label {
+  color: grey;
+}
+.form .form__element input {
+  border: 0;
+  border-bottom: 1px solid grey;
+  padding: 5px;
+}
+.form .form__element input:focus {
+  border-bottom: 1px solid #202124;
+}
+.form .form__element #birtday-date {
+  width: 100%;
+  background: 0;
+}
+.form button {
+  margin: auto;
+  padding: 10px 25px 10px 25px;
+  background: 0;
+  border: 1px solid grey;
+  cursor: pointer;
+  border-radius: 1px;
+}
+.form button:hover {
+  border: 1px solid #202124;
+  transition: all 0.2s;
+}
+.calendar {
+  margin-top: 100px;
+  margin-bottom: 50px;
+  height: 55rem;
+  width: 100%;
+  background-color: #eeeeeea2;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.calendar .calendar__month {
+  width: 100%;
+  height: 7rem;
+  background-color: #202124;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+  text-align: center;
+}
+.calendar .calendar__month .calendar__month__current p {
+  color: white;
+}
+.calendar .calendar__month .calendar__month__arrow {
+  background: 0;
+  border: 0;
+  padding: 15px;
+  cursor: pointer;
+}
+.calendar .calendar__month .calendar__month__arrow img {
+  width: 25px;
+  height: 25px;
+}
+.calendar .calendar__month .calendar__month__current--month {
+  font-size: 2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+.calendar .calendar__weekdays {
+  width: 100%;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+}
+.calendar .calendar__weekdays div {
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: 0.1rem;
+  width: calc(100% / 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.calendar .calendar__days {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.calendar .calendar__days .calendar__days__day--prev-date,
+.calendar .calendar__days .calendar__days__day--next-date {
+  opacity: 0.3;
+}
+.calendar .calendar__days .calendar__days__day {
+  width: calc(100% / 7);
+  font-size: 1.1rem;
+  height: 7rem;
+  align-items: center;
+  padding: 1px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.calendar .calendar__days .calendar__days__day span:nth-child(1) {
+  height: 30%;
+}
+.calendar .calendar__days .calendar__days__day span:nth-child(2) {
+  height: 70%;
+}
+.calendar .calendar__days .calendar__days__day--birthday {
+  cursor: pointer;
+  background-color: rgba(32, 33, 36, 0.1);
+  transition: all 0.1s ease;
+}
+.calendar .calendar__days .calendar__days__day--birthday .birthday--info {
+  font-size: 0.9rem;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: normal;
+}
+.calendar .calendar__days .calendar__days__day--birthday span {
+  font-weight: bold;
+}
+.calendar .calendar__days .calendar__days__day--birthday:hover, .calendar .calendar__days .calendar__days__day--birthday:focus {
+  background-color: #202124;
+  color: white;
+}
+.calendar .calendar__days .calendar__days__day--today {
+  background-color: rgba(32, 33, 36, 0.1);
+}
+
+/*# sourceMappingURL=/Project.80dfb952.css.map */

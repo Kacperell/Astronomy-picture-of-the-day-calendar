@@ -1,0 +1,73 @@
+@import "utilities/variables";
+
+.modal {
+    background: rgba(0, 0, 0, 0.6);
+    visibility: hidden;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    will-change: opacity;
+    transition: all 0.4s ease;
+    //We can do a long animation because api data is being downloaded at that time
+
+    .modal__content {
+        background-color: #FFFEFF;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        flex-direction: column;
+        width: 800px;
+        max-width: 100%;
+        padding: 20px;
+        padding-top: 0;
+        border-radius: 3px;
+        min-height: 50vh;
+        max-height: 90vh;
+        overflow-y: auto;
+
+        .modal__content__btn--close {
+            padding: 10px;
+            background: 0;
+            padding: 10px;
+            border: 0;
+            cursor: pointer;
+
+            img {
+                width: 25px;
+            }
+        }
+
+        .modal__content__birthday {
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+
+            img {
+                max-width: 70%;
+                margin: auto;
+            }
+
+            span {
+                font-weight: bold;
+                font-size: 1.5rem;
+                text-align: center;
+                color: $base-color;
+            }
+
+            span,
+            p {
+                margin: 10px;
+            }
+        }
+    }
+}
+
+.modal.active {
+    visibility: visible;
+    opacity: 1;
+}

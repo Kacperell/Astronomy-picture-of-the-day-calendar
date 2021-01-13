@@ -1,0 +1,29 @@
+@import "utilities/variables";
+// @import './form.scss';
+@import './modal.scss';
+@import './list.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+::selection {
+    background: $base-color;
+    color: white;
+}
+
+.container {
+    width: 1100px;
+    max-width: 98%;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

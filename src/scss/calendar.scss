@@ -1,0 +1,134 @@
+@import "utilities/variables";
+$base-brighter: rgba($base-color, 0.1);
+$today-background:$base-brighter;
+
+.calendar {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    height: 55rem;
+    width: 100%;
+    background-color: #eeeeeea2;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+    .calendar__month {
+        width: 100%;
+        height: 7rem;
+        background-color: $base-color;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2rem;
+        text-align: center;
+
+        .calendar__month__current {
+            p {
+                color: white;
+            }
+        }
+
+        .calendar__month__arrow {
+            background: 0;
+            border: 0;
+            padding: 15px;
+            cursor: pointer;
+
+            img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+
+        .calendar__month__current--month {
+            font-size: 2rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.2rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+
+    }
+
+    .calendar__weekdays {
+        width: 100%;
+        height: 5rem;
+        display: flex;
+        align-items: center;
+
+        div {
+            // days of the week
+            font-size: 1.3rem;
+            font-weight: 400;
+            letter-spacing: 0.1rem;
+            width: calc(100% / 7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+
+    .calendar__days {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+
+        .calendar__days__day--prev-date,
+        .calendar__days__day--next-date {
+            opacity: 0.3;
+        }
+
+        .calendar__days__day {
+            width: calc(100% / 7);
+            font-size: 1.1rem;
+            height: 7rem;
+            align-items: center;
+            padding: 1px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            span:nth-child(1) {
+                //span with day number
+                height: 30%;
+            }
+
+            span:nth-child(2) {
+                //span with potential information
+                height: 70%;
+            }
+        }
+
+        .calendar__days__day--birthday {
+            cursor: pointer;
+            background-color: $base-brighter;
+            transition: all 0.1s ease;
+
+            .birthday--info {
+                font-size: 0.9rem;
+                max-width: 100%;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-weight: normal;
+            }
+
+            span {
+                font-weight: bold;
+            }
+
+            &:hover,
+            &:focus {
+                background-color: $base-color;
+                color: white;
+
+            }
+        }
+
+
+        .calendar__days__day--today {
+            background-color: $today-background;
+        }
+    }
+
+}
